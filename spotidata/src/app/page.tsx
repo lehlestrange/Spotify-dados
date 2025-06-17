@@ -1,7 +1,9 @@
+import " ./homePage ";
 
+function app() {
+    return <div style ={{
+        backgroundImag: url("welcomePage.png")
+    }}>
 
-export default function Home() {
-  return (
-    <div></div>
-  );
+    </div>
 }
