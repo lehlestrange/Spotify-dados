@@ -8,7 +8,7 @@ export default function GetMinutes(props: any) {
         counter = Math.floor(counter/ 60000);
     return (
         <div>
-            <p>{counter} minutes</p>
+            <p className="text-3xl font-light ml-44">{counter} minutes</p>
         </div>
     );
 }

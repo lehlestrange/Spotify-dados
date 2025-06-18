@@ -5,6 +5,10 @@ import GetPlays from './components/getPlays';
 import GetMinutes from './components/getMinutes';
 import GetDifferentSongs from './components/getDifferentSongs';
 import SongCard from './components/songCard';
+import "tailwindcss"
+
+
+
 
 type Song = {
     _id: {
