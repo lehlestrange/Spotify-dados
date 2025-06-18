@@ -1,0 +1,48 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Pavanam&display=swap');
+
+.start{
+   margin: 50px;
+   text-align: center;
+    color: rgb(255, 255, 255);
+    background-color: rgb(206, 231, 232);
+    border-radius: 30px;
+    border: 3px solid rgb(14, 14, 75);
+    padding: 3px 30px;
+    font-family: 'Pavanam', sans-serif;
+    font-size: 1rem;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+} 
+
+.start {
+  background: #b621fe;
+  border: 2px solid blue;
+  z-index: 1;
+}
+.start:after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 100%;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  background-color: #663dff;
+  border-radius: 5px;
+   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  transition: all 0.3s;
+}
+.start:hover {
+  color: #fff;
+}
+.start:hover:after {
+  left: 0;
+  width: 100%;
+}
+.start:active {
+  top: 2px;
+}
