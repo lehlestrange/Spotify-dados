@@ -32,7 +32,7 @@ export default function Home() {
                                                                   // usámos o useEffect, que basicamente vai buscar (fetch) cada objeto do JSON
                                                                   // e, usando o setSongs, coloca essa musica dentro do array chamado songs
                                                                   // (Por outras palavras, colocámos cada objeto/musica dentro desse array)
-  
+
   useEffect(() => {
     fetch("/history.json")
       .then((res) => res.json())
