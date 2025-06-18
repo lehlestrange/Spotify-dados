@@ -41,10 +41,11 @@ export default function Home() {
 
   return (
         <>
-        <h2>You've listened to a total of...</h2>
+        <h2 className="text-3xl font-light ml-44">You've listened to a total of...</h2>
         <GetPlays songs={songs} />
         <GetMinutes songs={songs} />
         <GetDifferentSongs songs={songs} />
+        <SongCard/>
         </>
                                                                   /*Coragem!! Vocês conseguem - Francisco */
   )
