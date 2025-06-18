@@ -3,7 +3,7 @@ import React from "react";
 export default function GetPlays(props: any) {
     return (
         <div>
-            <p>{props.songs.length} plays</p>
+            <p className="">{props.songs.length} plays</p>
         </div>
     );
 }

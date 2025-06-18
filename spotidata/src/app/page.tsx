@@ -3,6 +3,8 @@ import Head from 'next/head'
 import { useEffect, useState } from "react";
 import GetPlays from './components/getPlays';
 import GetMinutes from './components/getMinutes';
+import GetDifferentSongs from './components/getDifferentSongs';
+import SongCard from './components/songCard';
 
 type Song = {
     _id: {
@@ -42,8 +44,9 @@ export default function Home() {
         <h2>You've listened to a total of...</h2>
         <GetPlays songs={songs} />
         <GetMinutes songs={songs} />
+        <GetDifferentSongs songs={songs} />
         </>
-        /*Coragem!! Vocês conseguem - Francisco */
+                                                                  /*Coragem!! Vocês conseguem - Francisco */
   )
 }
 
