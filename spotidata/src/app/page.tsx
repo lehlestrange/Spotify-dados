@@ -1,16 +1,10 @@
-// pages/index.js
+"use client"
 import Head from 'next/head'
 import { useEffect, useState } from "react";
-import Order from './order';
+import GetPlays from './components/getPlays';
+import GetMinutes from './components/getMinutes';
 
-function app() {
-    return <div style ={{
-        backgroundImag: url("welcomePage.png")
-    }}>
-
-const map_songs= new Map();
-
-type spotifySong= {
+type Song = {
     _id: {
       $oid: string,
     },
@@ -28,20 +22,28 @@ type spotifySong= {
   }
 
 
-export default function Home(props) {
-
+export default function Home() {
   
-  //create useState for song
+                                                                  // criámos um array vazio, e uma função para modificar esse array
+  const [songs, setSongs] = useState<Song[]>([]);
 
-  const [Song, setSong] = useState<spotifySong[]>([])
-
+                                                                  // usámos o useEffect, que basicamente vai buscar (fetch) cada objeto do JSON
+                                                                  // e, usando o setSongs, coloca essa musica dentro do array chamado songs
+                                                                  // (Por outras palavras, colocámos cada objeto/musica dentro desse array)
+  
   useEffect(() => {
-    fetch('history.json')
-    .then(response => response.json())
-    .then ((json) => setSong(json))
-  }, [])
- 
+    fetch("/history.json")
+      .then((res) => res.json())
+      .then((data: Song[]) => setSongs(data));
+  }, []);
+
   return (
-    
+        <>
+        <h2>You've listened to a total of...</h2>
+        <GetPlays songs={songs} />
+        <GetMinutes songs={songs} />
+        </>
+        /*Coragem!! Vocês conseguem - Francisco */
   )
 }
+
