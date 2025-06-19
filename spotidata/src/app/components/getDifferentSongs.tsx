@@ -8,7 +8,7 @@ export default function GetMinutes(props: any, )  {
 }
 return (
     <div>
-        <p className="text-3xl font-light ml-44">{counter} songs</p>
+        <p className="text-3xl font-medium ml-100 text-blue-300">{counter} songs</p>
     </div>
 );
 }

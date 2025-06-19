@@ -5,10 +5,10 @@ export default function GetMinutes(props: any) {
     for (let i = 0; i < props.songs.length; i++) {
         counter += props.songs[i].ms_played;
     }   
-        counter = Math.floor(counter/ 60000);
+        counter = Math.floor(counter/ 60000)
     return (
         <div>
-            <p className="text-3xl font-light ml-44">{counter} minutes</p>
+            <p className="text-3xl font-medium ml-100 text-blue-300">{counter} minutes</p>
         </div>
     );
 }
