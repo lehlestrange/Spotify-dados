@@ -1,8 +1,8 @@
 "use client"
-import Head from 'next/head'
 import { useEffect, useState } from "react";
-import GetPlays from './components/getPlays';
 import GetMinutes from './components/getMinutes';
+import GetPlays from './components/getPlays';
+import HomePage from "./components/homePage";
 
 type Song = {
     _id: {
@@ -42,6 +42,7 @@ export default function Home() {
         <h2>You've listened to a total of...</h2>
         <GetPlays songs={songs} />
         <GetMinutes songs={songs} />
+        <HomePage/>
         </>
         /*Coragem!! Vocês conseguem - Francisco */
   )
