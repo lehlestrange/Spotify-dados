@@ -1,8 +1,23 @@
 "use client"
 import { useEffect, useState } from "react";
 import GetMinutes from './components/getMinutes';
-import GetPlays from './components/getPlays';
-import HomePage from "./components/homePage";
+import GetDifferentSongs from './components/getDifferentSongs';
+import SongCard from './components/songCard';
+import UserPage from './components/userPage';
+import { Start } from './components/buttonFill';
+
+/* COLORS 
+
+SLATE 800
+BLUE 300
+YELLOW 400
+PURPLE 500
+TEAL 50
+ROSE 300
+*/
+
+
+
 
 type Song = {
     _id: {
@@ -38,13 +53,19 @@ export default function Home() {
   }, []);
 
   return (
-        <>
-        <h2>You've listened to a total of...</h2>
-        <GetPlays songs={songs} />
+    //take out mt-50 to remove top
+        <> 
+        <div id="background" className="bg-teal-50 w-full h-full">
+        <UserPage/>
+        <h2 className="mt-100 mb-10 ml-40 text-3xl font-medium text-slate-700">You've listened to a total of...</h2>
+        {/* <GetPlays songs={songs} /> */}
         <GetMinutes songs={songs} />
-        <HomePage/>
+        <GetDifferentSongs songs={songs} />
+        <SongCard/>
+      
+        </div>
         </>
-        /*Coragem!! Vocês conseguem - Francisco */
+                                                                  /*Coragem!! Vocês conseguem - Francisco */
   )
 }
 
