@@ -1,14 +1,15 @@
 import styles from './button.module.css'
 
-type StartProps = {
-  desc: string;
-  onStartClick: () => void;
-};
 
-export function Start({ desc, onStartClick }: StartProps) {
+
+export function Start({ desc, onStartClick }) {
   return (
     <button id='btn' className={styles.start} onClick={onStartClick}>
-      {desc}
+      {desc} Start!
     </button>
   );
+}
+
+export function End(){
+  return <div>a</div>
 }

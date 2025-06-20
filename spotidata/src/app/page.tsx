@@ -5,6 +5,7 @@ import GetDifferentSongs from './components/getDifferentSongs';
 import SongCard from './components/songCard';
 import UserPage from './components/userPage';
 import { Start } from './components/buttonFill';
+import GetPlays from "./components/getPlays";
 
 /* COLORS 
 
@@ -52,20 +53,31 @@ export default function Home() {
       .then((data: Song[]) => setSongs(data));
   }, []);
 
+  console.log(songs);
+
+  const user = {
+    userName: "Carolina Olívia",
+    bio: "Apaixonada por palavras, café forte e dias cinzentos. Escrevo para me encontrar e fotografo para não esquecer.",
+    imgPath: "/welcomepage/ladyGagaPic.png"
+  }
+
   return (
     //take out mt-50 to remove top
         <> 
         <div id="background" className="bg-teal-50 w-full h-full">
-        <UserPage/>
-        <h2 className="mt-100 mb-10 ml-40 text-3xl font-medium text-slate-700">You've listened to a total of...</h2>
-        {/* <GetPlays songs={songs} /> */}
+        <UserPage username={user.userName} bio={user.bio} imgPath={user.imgPath}/>
+        <h2 className="mt-100 mb-10 ml-40 text-2xl font-medium text-slate-700">You've listened to a total of... {songs.length} songs.</h2>
+       <Start desc={undefined} onStartClick={undefined}/>
+
+        <GetPlays songs={songs} />
         <GetMinutes songs={songs} />
         <GetDifferentSongs songs={songs} />
         <SongCard/>
-      
         </div>
         </>
+        
                                                                   /*Coragem!! Vocês conseguem - Francisco */
   )
 }
+
 
